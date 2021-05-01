@@ -25,11 +25,15 @@ Formulário HTML com input type 'text' ou 'tel' para o CPF (recomenda-se 'tel' p
 	</form>
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
-No script principal - main.js - monitorar os eventos de keydown e keyup para acionar a máscara mandando o próprio evento como parâmatro, que 
+No script principal - main.js - importar o módulo e monitorar os eventos de keydown e keyup para acionar a máscara mandando o próprio evento como parâmatro, que 
 será processado pelo módulo (mascaracpf.js);
 Também bloqueia-se a opção de colar para forçar a digitação.
 
 --------------------------------------------------------------------------------------------------------------------------------------------
+	    import { mascaraCpf } from '../../modules/mascaracpf.js';
+	    
+	    [...]
+	    
 	    inputCpf.addEventListener('keydown', event => mascaraCpf(event));
 	    inputCpf.addEventListener('keyup', event => mascaraCpf(event));
 
