@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Validar CPF</title>
+	<link rel="stylesheet" href="./assets/css/style.min.css">
+</head>
+
+<body>
+
+	<section class="container">
+		<h1>Digite seu CPF</h1>
+		<form action="" method="POST">
+			<input type="tel" class="input-cpf" maxlength="14" minlength="14" pattern="[0-9.-]{14}" required title="Deve conter apenas números.">
+			<label for="input-cpf">*Somente números</label>
+			<input type="submit" class="btn-validar" value="Validar">
+			<p><!--conteúdo dinâmico - Resultado--></p>
+		</form>
+	</section>
+
+	<script src="assets/js/bundle.js"></script>
+
+</body>
+
+</html>
