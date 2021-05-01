@@ -8,7 +8,7 @@ Permite digitar apenas números e adiciona automaticamente os pontos e hífen ne
 
 Feito para funcionar em desktop e mobile;
 
-Para demonstração, utiliza um validador de CPF;
+Para demonstração, utiliza um validador de CPF: https://apilogik.github.io/mascara-cpf/
 
 ----------Instruções-------------
 
