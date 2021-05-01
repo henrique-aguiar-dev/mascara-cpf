@@ -17,12 +17,12 @@ Exemplos de como utilizar:
 Formulário HTML com input type 'text' ou 'tel' para o CPF (recomenda-se 'tel' para melhor funcionamento em mobile):
 
 --------------------------------------------------------------------------------------------------------------------------------------------
-    <form action="" method="POST">
+   	<form action="" method="POST">
 			<input type="tel" class="input-cpf" maxlength="14" minlength="14" pattern="[0-9.-]{14}" required title="Deve conter apenas números.">
 			<label for="input-cpf">*Somente números</label>
 			<input type="submit" class="btn-validar" value="Validar">
 			<p><!--conteúdo dinâmico - Resultado--></p>
-		</form>
+	</form>
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
 No script principal - main.js - monitorar os eventos de keydown e keyup para acionar a máscara mandando o próprio evento como parâmatro, que 
