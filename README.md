@@ -33,6 +33,7 @@ Também bloqueia-se a opção de colar para forçar a digitação.
 	    import { mascaraCpf } from '../../modules/mascaracpf.js';
 	    
 	    [...]
+	    const inputCpf = document.querySelector('#input-cpf');
 	    
 	    inputCpf.addEventListener('input', event => mascaraCpf(event));
 
