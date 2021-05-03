@@ -3,8 +3,8 @@ import { mascaraCpf } from '../../modules/mascaracpf.js';
 
 //-----------Funções principais----------------
 const carregarFormCpf = () => {
-	const inputCpf = document.querySelector('.input-cpf');
-	const btnValidar = document.querySelector('.btn-validar');
+	const inputCpf = document.querySelector('#input-cpf');
+	const btnValidar = document.querySelector('#btn-validar');
 	const formP = document.querySelector('form p');
 
 	const exibirResultado = resultado => {
@@ -20,8 +20,7 @@ const carregarFormCpf = () => {
 	}
 
 	//Adicionar máscara
-	inputCpf.addEventListener('keydown', event => mascaraCpf(event));
-	inputCpf.addEventListener('keyup', event => mascaraCpf(event));
+	inputCpf.addEventListener('input', event => mascaraCpf(event));
 
 	//Evitar copiar e colar do número completo
 	inputCpf.addEventListener('paste', event => event.preventDefault());
