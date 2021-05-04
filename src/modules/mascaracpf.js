@@ -9,7 +9,8 @@ export default class MascaraCpf {
 		
 		this.input.addEventListener('input', event => {
 			//Bloquear dígitos não numéricos
-			isNaN(event.data) || event.data === null ? this.input.value = this.input.value.slice(0, -1) : false;
+			console.log(event.data)
+			isNaN(event.data) || event.data === null || event.data === ' ' ? this.input.value = this.input.value.slice(0, -1) : false;
 
 			//Adicionar pontos e hífen (999.999.999-99)
 			let allDig = this.input.value.length;
