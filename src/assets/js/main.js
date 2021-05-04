@@ -1,5 +1,5 @@
 import Cpf from '../../modules/validacpf.js';
-import { mascaraCpf } from '../../modules/mascaracpf.js';
+import MascaraCpf from '../../modules/mascaracpf.js';
 
 //-----------Funções principais----------------
 const carregarFormCpf = () => {
@@ -19,8 +19,11 @@ const carregarFormCpf = () => {
 		exibirResultado(resultado);
 	}
 
-	//Adicionar máscara
-	inputCpf.addEventListener('input', event => mascaraCpf(event));
+	const loadMask = () => {
+		//Novo objeto Mask - parâmetro: o campo p/ CPF do formulário;
+		const cpfMask = new MascaraCpf(inputCpf);
+		cpfMask.mask();
+	}
 
 	//Evitar copiar e colar do número completo
 	inputCpf.addEventListener('paste', event => event.preventDefault());
@@ -32,6 +35,8 @@ const carregarFormCpf = () => {
 			e.preventDefault();
 		} else return;
 	})
+
+	loadMask();
 
 }//carregarFormCpf
 
