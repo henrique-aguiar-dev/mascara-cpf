@@ -5,6 +5,8 @@ export default class MascaraCpf {
 	}
 	//Adicionar máscara
 	mask() {
+		this.input.pattern = '[0-9]{3}[.]{1}[0-9]{3}[.]{1}[0-9]{3}[-]{1}[0-9]{2}';
+		
 		this.input.addEventListener('input', event => {
 			//Bloquear dígitos não numéricos
 			isNaN(event.data) || event.data === null ? this.input.value = this.input.value.slice(0, -1) : false;
