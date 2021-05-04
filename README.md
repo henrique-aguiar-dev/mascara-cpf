@@ -18,24 +18,23 @@ Formulário HTML com input type 'text' ou 'tel' para o CPF (recomenda-se 'tel' p
 
 --------------------------------------------------------------------------------------------------------------------------------------------
    	<form action="" method="POST">
-			<input type="tel" id="input-cpf" maxlength="14" minlength="14" pattern="[0-9.-]{14}" required title="Deve conter apenas números.">
+			<input type="tel" id="input-cpf" maxlength="14" minlength="14" required title="Deve conter apenas números.">
 			<label for="input-cpf">*Somente números</label>
 			<input type="submit" id="btn-validar" value="Validar">
 			<p><!--conteúdo dinâmico - Resultado--></p>
 	</form>
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
-No script principal - main.js - importar o módulo e monitorar o evento 'input' para acionar a máscara mandando o próprio evento como parâmatro, que 
-será processado pelo módulo (mascaracpf.js);
-Também bloqueia-se a opção de colar para forçar a digitação.
+No script principal - main.js - importar o módulo MascaraCpf e criar novo objeto mandando como parâmatro o DOM Object do campo de formulário desejado, que será processado pelo módulo (mascaracpf.js); Também bloqueia-se a opção de colar para forçar a digitação.
 
 --------------------------------------------------------------------------------------------------------------------------------------------
-	    import { mascaraCpf } from '../../modules/mascaracpf.js';
+	    import MascaraCpf from '../../modules/mascaracpf.js';
 	    
 	    [...]
 	    const inputCpf = document.querySelector('#input-cpf');
 	    
-	    inputCpf.addEventListener('input', event => mascaraCpf(event));
+	    const cpfMask = new MascaraCpf(inputCpf);
+	    cpfMask.mask();
 
 	    //Evitar copiar e colar do número completo
 	    inputCpf.addEventListener('paste', event => event.preventDefault());
@@ -45,5 +44,3 @@ Também bloqueia-se a opção de colar para forçar a digitação.
 
 OBS 1: Usar o campo de formulário HTML type 'number' bloqueará os caracteres '.' e '-'; Usar type 'tel' se ajusta melhor no mobile para apresentar
 o teclado numérico na tela sem impedir os caracteres desejados;
-
-OBS 1: O atributo HTML pattern só servirá para impedir o envio do formulário, mas não evita a digitação sem o script da máscara;
